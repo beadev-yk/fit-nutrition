@@ -1,26 +1,237 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Base Variables */
+  --radius: 0.625rem;
+
+  /* Soothing and Energetic Colors */
+  --cyber-light-blue: #a3d8ff;
+  /* Calming light blue */
+  --cyber-soft-blue: #6ec1e4;
+  /* Softer blue for friendly appeal */
+  --cyber-green: #6ee89e;
+  /* Soft green for energy */
+  --cyber-orange: #ffbc57;
+  /* Warm orange accent */
+  --cyber-dark-gray: #333333;
+  /* Dark gray for contrast */
+  --cyber-light-gray: #f4f4f4;
+  /* Light gray for background */
+
+  /* Background */
+  --background: var(--cyber-light-gray);
+  --foreground: var(--cyber-dark-gray);
+
+  /* Card and popover elements */
+  --card: #ffffff;
+  --card-foreground: var(--cyber-dark-gray);
+  --popover: #ffffff;
+  --popover-foreground: var(--cyber-dark-gray);
+
+  /* Primary - Main blue */
+  --primary: var(--cyber-soft-blue);
+  --primary-foreground: var(--cyber-dark-gray);
+
+  /* Secondary - Calming green */
+  --secondary: var(--cyber-green);
+  --secondary-foreground: var(--cyber-dark-gray);
+
+  /* Accent - Friendly orange */
+  --accent: var(--cyber-orange);
+  --accent-foreground: var(--cyber-dark-gray);
+
+  /* Muted elements */
+  --muted: #e1e1e1;
+  --muted-foreground: var(--cyber-dark-gray);
+
+  /* System colors */
+  --destructive: #ef4444;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: rgba(0, 0, 0, 0.1);
+  --ring: var(--cyber-soft-blue);
+
+  /* Chart colors */
+  --chart-1: var(--cyber-soft-blue);
+  --chart-2: var(--cyber-green);
+  --chart-3: var(--cyber-orange);
+  --chart-4: #f1f1f1;
+  --chart-5: #ffaf72;
+
+  /* Sidebar colors */
+  --sidebar: var(--cyber-light-blue);
+  --sidebar-foreground: var(--cyber-dark-gray);
+  --sidebar-primary: var(--cyber-soft-blue);
+  --sidebar-primary-foreground: var(--cyber-dark-gray);
+  --sidebar-accent: var(--cyber-green);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(0, 0, 0, 0.2);
+  --sidebar-ring: var(--cyber-soft-blue);
+
+  /* Custom UI Variables */
+  --cyber-glow-primary: rgba(0, 178, 255, 0.2);
+  --cyber-glow-strong: rgba(0, 178, 255, 0.5);
+  --cyber-text-bright: #333333;
+  --cyber-text-muted: rgba(51, 51, 51, 0.7);
+}
+
+.dark {
+  /* Background */
+  --background: var(--cyber-light-blue);
+  --foreground: var(--cyber-dark-gray);
+
+  /* Card and popover elements */
+  --card: #ffffff;
+  --card-foreground: var(--cyber-dark-gray);
+  --popover: #ffffff;
+  --popover-foreground: var(--cyber-dark-gray);
+
+  /* Primary - Main blue */
+  --primary: var(--cyber-soft-blue);
+  --primary-foreground: var(--cyber-dark-gray);
+
+  /* Secondary - Calming green */
+  --secondary: var(--cyber-green);
+  --secondary-foreground: var(--cyber-dark-gray);
+
+  /* Accent - Friendly orange */
+  --accent: var(--cyber-orange);
+  --accent-foreground: var(--cyber-dark-gray);
+
+  /* Muted elements */
+  --muted: #e1e1e1;
+  --muted-foreground: var(--cyber-dark-gray);
+
+  /* System colors */
+  --destructive: #ef4444;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: rgba(0, 0, 0, 0.1);
+  --ring: var(--cyber-soft-blue);
+
+  /* Sidebar colors */
+  --sidebar: var(--cyber-light-blue);
+  --sidebar-foreground: var(--cyber-dark-gray);
+  --sidebar-primary: var(--cyber-soft-blue);
+  --sidebar-primary-foreground: var(--cyber-dark-gray);
+  --sidebar-accent: var(--cyber-green);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(0, 0, 0, 0.2);
+  --sidebar-ring: var(--cyber-soft-blue);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes scanline {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+@keyframes slow-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
+}
+
+.animate-slow-spin {
+  animation: slow-spin 12s linear infinite;
+}
+
+@keyframes sound-wave {
+  0% {
+    height: 10%;
+  }
+
+  50% {
+    height: 100%;
+  }
+
+  100% {
+    height: 10%;
+  }
+}
+
+.animate-sound-wave {
+  animation: sound-wave 1.2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
