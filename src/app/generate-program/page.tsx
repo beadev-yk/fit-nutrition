@@ -219,12 +219,14 @@ const GenerateProgramPage = () => {
 
               <div
                 className={`mt-4 flex items-center gap-2 px-3 py-1 rounded-full bg-card border border-border ${
-                  isSpeaking ? "border-primary" : ""
+                  isSpeaking ? "border-primary" : "border-accent"
                 }`}
               >
                 <div
                   className={`w-2 h-2 rounded-full ${
-                    isSpeaking ? "bg-primary animate-pulse" : "bg-muted"
+                    isSpeaking
+                      ? "bg-primary animate-pulse"
+                      : "bg-accent animate-pulse"
                   }`}
                 />
 
