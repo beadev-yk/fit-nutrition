@@ -15,7 +15,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Id } from "../../../convex/_generated/dataModel";
 
 const ProfilePage = () => {
   const { user } = useUser();
