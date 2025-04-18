@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import { Analytics } from "@vercel/analytics/next";
+
 import ConvexClerkProvider from "@/providers/ConvexClerkProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -42,6 +44,7 @@ export default function RootLayout({
 
           <main className="pt-24 flex-grow">{children}</main>
           <Footer />
+          <Analytics />
         </body>
       </html>
     </ConvexClerkProvider>
