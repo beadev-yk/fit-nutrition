@@ -5,6 +5,7 @@ import React from "react";
 import TerminalOverlay from "@/components/TerminalOverlay";
 import { Button } from "@/components/ui/button";
 import UserPrograms from "@/components/UserPrograms";
+import AnimatedCounter from "@/components/AnimatedConter";
 
 const HomePage = () => {
   return (
@@ -42,7 +43,11 @@ const HomePage = () => {
               {/* STATS */}
               <div className="flex items-center gap-10 py-6 font-mono">
                 <div className="flex flex-col">
-                  <div className="text-2xl text-primary">500+</div>
+                  <AnimatedCounter
+                    target={500}
+                    suffix="+"
+                    className="text-2xl text-primary"
+                  ></AnimatedCounter>
                   <div className="text-xs uppercase tracking-wider">
                     ACTIVE USERS
                   </div>
