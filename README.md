@@ -72,7 +72,7 @@ You can add a folder structure overview here later if needed.
 
 ## 📜 License
 
-MIT (or your chosen license)
+MIT
 
 ## 🙌 Contributions
 
@@ -80,4 +80,4 @@ Feel free to fork this project, raise issues, or submit PRs!
 
 ---
 
-Built with ❤️ by Astronaut
+Built with ❤️ by Yashwant Kushwaha
