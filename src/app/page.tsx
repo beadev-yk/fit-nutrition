@@ -13,8 +13,6 @@ const HomePage = () => {
       <section className="relative z-10 py-8 px-8 flex-grow">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative">
-            {/* CORNER DECORATION */}
-            <div className="absolute top-10 left-0 w-40 h-40 border-l-2 border-t-2" />
             {/* LEFT SIDE CONTENT */}
             <div className="lg:col-span-7 space-y-8 relative">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
