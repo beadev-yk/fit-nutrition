@@ -5,7 +5,7 @@ import React from "react";
 import TerminalOverlay from "@/components/TerminalOverlay";
 import { Button } from "@/components/ui/button";
 import UserPrograms from "@/components/UserPrograms";
-import AnimatedCounter from "@/components/AnimatedConter";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const HomePage = () => {
   return (

@@ -17,6 +17,7 @@ import {
   ShieldIcon,
 } from "lucide-react";
 import { USER_PROGRAMS } from "@/constants";
+import AnimatedCounter from "./AnimatedCounter";
 
 const UserPrograms = () => {
   return (
@@ -50,7 +51,11 @@ const UserPrograms = () => {
             {/* STATS */}
             <div className="flex items-center justify-center gap-16 mt-10 font-mono">
               <div className="flex flex-col items-center">
-                <p className="text-3xl text-primary">500+</p>
+                <AnimatedCounter
+                  target={500}
+                  suffix="+"
+                  className="text-3xl text-primary"
+                />
                 <p className="text-sm text-muted-foreground uppercase tracking-wide mt-1">
                   PROGRAMS
                 </p>
